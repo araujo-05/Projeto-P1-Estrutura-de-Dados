@@ -34,9 +34,9 @@ public class VetorDinamico{
         
     }
     public String remove(){
-        if (estaVazio()) return "0 Processos";
+        if (estaVazio()) return "\n0 Processos\n";
         // ocupacao--;
-        String aux = "Processo: "+v[--ocupacao].toString()+" removido";
+        String aux = "\nProcesso: "+v[--ocupacao].toString()+" removido";
         if (capacidade >= 4 && ocupacao <= capacidade / 4) 
             redimensiona(capacidade / 2);
         return aux;
@@ -53,10 +53,10 @@ public class VetorDinamico{
         
 
     public String listar(){
-        if(estaVazio()) return "O Vetor está vazio";
+        if(estaVazio()) return "\n0 Processos\n";
         String lista = "\nCapacidade do Array: " +this.capacidade+"\nOcupação: "+this.ocupacao+"\n";
         for (int i = 0; i < this.ocupacao; i++) {
-            lista += v[i]+" | i = "+i;
+            lista += v[i];
         }
         
         return lista;
